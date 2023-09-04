@@ -6,7 +6,7 @@
 
   <body>
     <h2>학생 등록</h2>
-    <form action="/reqdb1" method="post">
+    <form action="/save" method="post">
       학번: <input type="text" name="studentNumber" /> <br />
       이름: <input type="text" name="studentName" /> <br />
       학과: <input type="text" name="studentMajor" /> <br />

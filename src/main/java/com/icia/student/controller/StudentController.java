@@ -22,7 +22,7 @@ public class StudentController {
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute StudentDTO studentDTO) {
+    public String reqdb1(@ModelAttribute StudentDTO studentDTO) {
         studentService.save(studentDTO);
         return "index";
     }
