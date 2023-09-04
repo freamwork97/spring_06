@@ -55,4 +55,29 @@ public class StudentController {
         model.addAttribute("studentList", studentDTOList); // 화면에 가져갈 데이터
         return "list"; // 브라우저에 출력할 jsp 파일 이름
     }
+
+    @GetMapping("/update")
+    public String update(@RequestParam("id") int id, Model model){
+        StudentDTO studentDTO = studentService.detail(id);
+        model.addAttribute("student",studentDTO);
+        System.out.println("id = " + id);
+        return "update";
+    }
+
+    @PostMapping("/update")
+    public String reqdb2(@ModelAttribute StudentDTO studentDTO) {
+        studentService.reqdb2(studentDTO);
+        System.out.println("studentDTO = " + studentDTO);
+        return "redirect:/list";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") int id, Model model){
+        studentService.detail(id);
+
+
+        return "list";
+    }
+
+
 }

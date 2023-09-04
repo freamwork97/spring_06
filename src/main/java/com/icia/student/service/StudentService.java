@@ -33,4 +33,11 @@ public class StudentService {
     public List<StudentDTO> list() {
         return studentReposit.list();
     }
+
+
+
+
+    public void reqdb2(StudentDTO studentDTO) {
+        studentReposit.reqdb2(studentDTO);
+    }
 }

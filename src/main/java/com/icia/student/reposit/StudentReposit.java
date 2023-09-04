@@ -28,4 +28,10 @@ public class StudentReposit {
     public StudentDTO detail(int id) {
         return sql.selectOne("Student.detail", id);
     }
+
+
+
+    public void reqdb2(StudentDTO studentDTO) {
+        sql.update("Student.update",studentDTO);
+    }
 }

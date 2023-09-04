@@ -13,9 +13,17 @@
         select * from student_table
     </select>
     <select id="detail" parameterType="int" resultType="student">
-        select * from student_table where id=(#{id})
+        select * from student_table where id=#{id}
     </select>
 
+    <update id="update" parameterType="student">
+        update student_table set studentMajor=#{studentMajor}, studentMobile=#{studentMobile}
+        where id=#{id}
+    </update>
+
+<!--    <delete id="delete" parameterType="int">-->
+<!--        delete * from student_table where id=(#{id})-->
+<!--    </delete>-->
 </mapper>
 
 
