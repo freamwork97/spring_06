@@ -49,10 +49,10 @@ public class StudentController {
     }
 
     @GetMapping("/list")
-    public String list(Model model){
+    public String list(Model model){ // 가져갈게 있을 때 Model사용
         List<StudentDTO> studentDTOList = studentService.list();
         System.out.println("studentList = " + studentDTOList);
-        model.addAttribute("studentList", studentDTOList);
-        return "list";
+        model.addAttribute("studentList", studentDTOList); // 화면에 가져갈 데이터
+        return "list"; // 브라우저에 출력할 jsp 파일 이름
     }
 }

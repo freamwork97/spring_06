@@ -6,7 +6,7 @@
 
   <body>
     <h2>index.jsp</h2>
-    <a href="/save">save.jsp로 이동</a>
+    <a href="/save">save.jsp로 이동</a> <br />
     <a href="/list">list.jsp로 이동</a>
   </body>
 </html>
