@@ -20,6 +20,16 @@ public class StudentService {
         studentReposit.save(studentDTO);
     }
 
+//    public boolean save(StudentDTO studentDTO) {
+//        int result = studentReposit.save(studentDTO);
+//        if (result > 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
+
     public List<StudentDTO> list() {
         return studentReposit.list();
     }

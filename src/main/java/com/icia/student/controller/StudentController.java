@@ -28,6 +28,19 @@ public class StudentController {
     }
 
 
+//    @PostMapping("/save")
+//    public String save(@ModelAttribute StudentDTO studentDTO) {
+//        boolean result = studentService.save(studentDTO);
+//        if (result) {
+//            System.out.println("학생등록 성공");
+//            return "index";
+//        } else {
+//            System.out.println("학생등록 실패");
+//            return "save";
+//        }
+//    }
+
+
     @GetMapping("/detail")
     public String detail(@RequestParam("id") int id, Model model){
         StudentDTO studentDTO = studentService.detail(id);

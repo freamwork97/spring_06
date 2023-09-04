@@ -15,6 +15,12 @@ public class StudentReposit {
         sql.insert("Student.save", studentDTO);
     }
 
+
+//    public int save(StudentDTO studentDTO) {
+//        return sql.insert("Student.save", studentDTO);
+//    }
+
+
     public List<StudentDTO> list() {
         return sql.selectList("Student.list");
     }
