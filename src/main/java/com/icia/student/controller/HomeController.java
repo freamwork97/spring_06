@@ -1,4 +1,4 @@
-package com.icia.demo.controller;
+package com.icia.student.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

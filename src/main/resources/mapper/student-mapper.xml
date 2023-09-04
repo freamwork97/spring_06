@@ -3,13 +3,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- namespace 반드시 작성! -->
-<mapper namespace="Demo">
+<mapper namespace="Student">
     <insert id="save" parameterType="com.icia.student.dto.StudentDTO">
         insert into student_table(studentNumber, studentName, studentMajor, studentMobile)
         value(#{studentNumber}, #{studentName}, #{studentMajor}, #{studentMobile})
     </insert>
 
-    <select id="findAll" resultType="com.icia.student.dto.StudentDTO">
+    <select id="list" resultType="com.icia.student.dto.StudentDTO">
         select * from student_table
     </select>
     <select id="detail" parameterType="int" resultType="com.icia.student.dto.StudentDTO">
