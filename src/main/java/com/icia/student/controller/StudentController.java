@@ -21,9 +21,9 @@ public class StudentController {
         return "save";
     }
 
-    @PostMapping("/reqdb1")
-    public String reqdb1(@ModelAttribute StudentDTO studentDTO) {
-        studentService.reqdb1(studentDTO);
+    @PostMapping("/save")
+    public String save(@ModelAttribute StudentDTO studentDTO) {
+        studentService.save(studentDTO);
         return "index";
     }
 

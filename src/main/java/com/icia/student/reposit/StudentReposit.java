@@ -11,7 +11,7 @@ import java.util.List;
 public class StudentReposit {
     @Autowired
     private SqlSessionTemplate sql;
-    public void reqdb1(StudentDTO studentDTO) {
+    public void save(StudentDTO studentDTO) {
         sql.insert("Student.save", studentDTO);
     }
 

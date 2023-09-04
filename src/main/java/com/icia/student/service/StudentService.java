@@ -14,12 +14,10 @@ public class StudentService {
 
     public StudentDTO detail(int id) {
         return studentReposit.detail(id);
-
     }
 
-    public void reqdb1(StudentDTO studentDTO) {
-        studentReposit.reqdb1(studentDTO);
-
+    public void save(StudentDTO studentDTO) {
+        studentReposit.save(studentDTO);
     }
 
     public List<StudentDTO> list() {

@@ -4,15 +4,15 @@
 
 <!-- namespace 반드시 작성! -->
 <mapper namespace="Student">
-    <insert id="save" parameterType="com.icia.student.dto.StudentDTO">
+    <insert id="save" parameterType="student">
         insert into student_table(studentNumber, studentName, studentMajor, studentMobile)
         value(#{studentNumber}, #{studentName}, #{studentMajor}, #{studentMobile})
     </insert>
 
-    <select id="list" resultType="com.icia.student.dto.StudentDTO">
+    <select id="list" resultType="student">
         select * from student_table
     </select>
-    <select id="detail" parameterType="int" resultType="com.icia.student.dto.StudentDTO">
+    <select id="detail" parameterType="int" resultType="student">
         select * from student_table where id=(#{id})
     </select>
 
