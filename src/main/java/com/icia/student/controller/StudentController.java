@@ -65,17 +65,18 @@ public class StudentController {
     }
 
     @PostMapping("/update")
-    public String reqdb2(@ModelAttribute StudentDTO studentDTO) {
-        studentService.reqdb2(studentDTO);
+    public String update(@ModelAttribute StudentDTO studentDTO) {
+        studentService.update(studentDTO);
         System.out.println("studentDTO = " + studentDTO);
         return "redirect:/list";
     }
 
     @GetMapping("/delete")
-    public String delete(@RequestParam("id") int id, Model model){
-        studentService.detail(id);
-
-
+    public String delete(@RequestParam("id") int id, Model model) {
+        studentService.delete(id);
+        // redirect 방식 쓰지 않고 직접 리스트 가져와서 list.jsp로 이동
+        List<StudentDTO> studentDTOList = studentService.list();
+        model.addAttribute("studentList", studentDTOList);
         return "list";
     }
 

@@ -29,15 +29,15 @@ public class StudentService {
 //        }
 //    }
 
-
     public List<StudentDTO> list() {
         return studentReposit.list();
     }
 
+    public void update(StudentDTO studentDTO) {
+        studentReposit.update(studentDTO);
+    }
 
-
-
-    public void reqdb2(StudentDTO studentDTO) {
-        studentReposit.reqdb2(studentDTO);
+    public void delete(int id) {
+        studentReposit.delete(id);
     }
 }

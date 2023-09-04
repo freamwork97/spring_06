@@ -11,10 +11,10 @@ import java.util.List;
 public class StudentReposit {
     @Autowired
     private SqlSessionTemplate sql;
+
     public void save(StudentDTO studentDTO) {
         sql.insert("Student.save", studentDTO);
     }
-
 
 //    public int save(StudentDTO studentDTO) {
 //        return sql.insert("Student.save", studentDTO);
@@ -29,9 +29,11 @@ public class StudentReposit {
         return sql.selectOne("Student.detail", id);
     }
 
+    public void update(StudentDTO studentDTO) {
+        sql.update("Student.update", studentDTO);
+    }
 
-
-    public void reqdb2(StudentDTO studentDTO) {
-        sql.update("Student.update",studentDTO);
+    public void delete(int id) {
+        sql.delete("Student.delete", id);
     }
 }
