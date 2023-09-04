@@ -16,8 +16,9 @@ import java.util.List;
 public class StudentController {
     @Autowired
     private StudentService studentService;
+
     @GetMapping("/save")
-    public String  save(){
+    public String save() {
         return "save";
     }
 
@@ -42,14 +43,14 @@ public class StudentController {
 
 
     @GetMapping("/detail")
-    public String detail(@RequestParam("id") int id, Model model){
+    public String detail(@RequestParam("id") int id, Model model) {
         StudentDTO studentDTO = studentService.detail(id);
-        model.addAttribute("student",studentDTO);
+        model.addAttribute("student", studentDTO);
         return "detail";
     }
 
     @GetMapping("/list")
-    public String list(Model model){ // 가져갈게 있을 때 Model사용
+    public String list(Model model) { // 가져갈게 있을 때 Model사용
         List<StudentDTO> studentDTOList = studentService.list();
         System.out.println("studentList = " + studentDTOList);
         model.addAttribute("studentList", studentDTOList); // 화면에 가져갈 데이터
@@ -57,9 +58,9 @@ public class StudentController {
     }
 
     @GetMapping("/update")
-    public String update(@RequestParam("id") int id, Model model){
+    public String update(@RequestParam("id") int id, Model model) {
         StudentDTO studentDTO = studentService.detail(id);
-        model.addAttribute("student",studentDTO);
+        model.addAttribute("student", studentDTO);
         System.out.println("id = " + id);
         return "update";
     }
@@ -74,11 +75,15 @@ public class StudentController {
     @GetMapping("/delete")
     public String delete(@RequestParam("id") int id, Model model) {
         studentService.delete(id);
-        // redirect 방식 쓰지 않고 직접 리스트 가져와서 list.jsp로 이동
-        List<StudentDTO> studentDTOList = studentService.list();
-        model.addAttribute("studentList", studentDTOList);
-        return "list";
+        return "redirect:/list";
     }
-
+//    @GetMapping("/delete")
+//    public String delete(@RequestParam("id") int id, Model model) {
+//        studentService.delete(id);
+//        // redirect 방식 쓰지 않고 직접 리스트 가져와서 list.jsp로 이동
+//        List<StudentDTO> studentDTOList = studentService.list();
+//        model.addAttribute("studentList", studentDTOList);
+//        return "list";
+//    }
 
 }
