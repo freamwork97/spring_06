@@ -61,14 +61,14 @@ public class StudentController {
     public String update(@RequestParam("id") int id, Model model) {
         StudentDTO studentDTO = studentService.detail(id);
         model.addAttribute("student", studentDTO);
-        System.out.println("id = " + id);
+//        System.out.println("id = " + id);
         return "update";
     }
 
     @PostMapping("/update")
     public String update(@ModelAttribute StudentDTO studentDTO) {
         studentService.update(studentDTO);
-        System.out.println("studentDTO = " + studentDTO);
+//        System.out.println("studentDTO = " + studentDTO);
         return "redirect:/list";
     }
 
