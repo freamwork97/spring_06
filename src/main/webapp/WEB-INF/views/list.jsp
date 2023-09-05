@@ -40,23 +40,31 @@ prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
             삭제버튼을 클릭하면 DB에서 해당 학생에 대한 삭제 처리를 진행하고 삭제처리가 끝나면
             index.jsp를 출력함.
         -->
-         <td>
-             <button onclick="update_fn('${student.id}')">수정</button>
-         </td>
-         <td>
-             <button onclick="delete_fn('${student.id}')">삭제</button>
-         </td>
+          <td>
+            <button onclick="update_fn('${student.id}')">수정</button>
+          </td>
+          <td>
+            <button onclick="delete_fn('${student.id}')">삭제</button>
+          </td>
         </tr>
       </c:forEach>
     </table>
   </body>
   <script>
-      const update_fn = (id) => {
-          location.href="/update?id="+id;
-      }
+    // function update_fn(id) {
+    //   location.href = "/update?id=" + id;
+    // }
 
-      const delete_fn = (id) => {
-          location.href="/delete?id="+id;
-      }
+    const update_fn = (id) => {
+      location.href = "/update?id=" + id;
+    };
+
+    // function delete_fn(id) {
+    //   location.href = "/delete?id=" + id;
+    // }
+
+    const delete_fn = (id) => {
+      location.href = "/delete?id=" + id;
+    };
   </script>
 </html>
